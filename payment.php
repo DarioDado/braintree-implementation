@@ -7,7 +7,7 @@ if (empty($_POST['payment_method_nonce'])) {
 }
 
 
-$result = Braintree_Transaction::sale([
+$result = $gateway->transaction()->sale([
     'amount' => $_POST['amount'],
     'paymentMethodNonce' => $_POST['payment_method_nonce'],
     'customer' => [
